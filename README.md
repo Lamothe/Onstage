@@ -5,6 +5,8 @@ wrap someone else's loader. Exhibit (the GNOME viewer) is a Python/GTK settings 
 libf3d/VTK; when VTK's glTF importer refuses a file or ignores an extension, no amount of
 Python can intervene. Here the whole pipeline is in reach.
 
+![Onstage viewing a glTF model](docs/Onstage.png)
+
 ## Layout
 
 ```
