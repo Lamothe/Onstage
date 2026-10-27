@@ -1,4 +1,4 @@
-namespace GlbView.Core.Tests;
+namespace Onstage.Core.Tests;
 
 public class GltfModelTests
 {
@@ -16,7 +16,7 @@ public class GltfModelTests
 
         var manifest = new
         {
-            asset = new { version = "2.0", generator = "glbview-test" },
+            asset = new { version = "2.0", generator = "onstage-test" },
             scene = 0,
             scenes = new[] { new { nodes = new[] { 0 } } },
             nodes = new[] { new { mesh = 0, translation = new[] { 5f, 0f, 0f } } },
@@ -60,7 +60,7 @@ public class GltfModelTests
 
         var model = GltfModel.Load(GlbBuilder.Build(manifest, bin));
 
-        Assert.Equal("glbview-test", model.Generator);
+        Assert.Equal("onstage-test", model.Generator);
         Assert.Single(model.Meshes);
         var prim = model.Meshes[0].Primitives[0];
         Assert.Equal(3, prim.Positions.Length);

@@ -1,6 +1,6 @@
-using GlbView.Core;
+using Onstage.Core;
 
-namespace GlbView.Core.Tests;
+namespace Onstage.Core.Tests;
 
 public class TextureColorSpaceTests
 {

@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace GlbView.Core.Schema;
+namespace Onstage.Core.Schema;
 
 // Typed DTOs for the glTF 2.0 JSON manifest. Properties that the spec gives a default
 // value to are nullable here; defaults are applied at use sites (see GltfModel).

@@ -1,14 +1,14 @@
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Numerics;
-using GlbView.Core;
+using Onstage.Core;
 using Silk.NET.Input;
 using Silk.NET.Maths;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using StbImageSharp;
 
-namespace GlbView.Viewer;
+namespace Onstage;
 
 internal static class Program
 {
@@ -114,9 +114,9 @@ internal static class Program
 
     private static void PrintUsage()
     {
-        Console.WriteLine("usage: GlbView.Viewer <model.glb|model.gltf> [--inspect]");
-        Console.WriteLine("       GlbView.Viewer --inspect <model.glb>");
-        Console.WriteLine("       GlbView.Viewer <model.glb> --capture out.png [--frames N]");
+        Console.WriteLine("usage: Onstage <model.glb|model.gltf> [--inspect]");
+        Console.WriteLine("       Onstage --inspect <model.glb>");
+        Console.WriteLine("       Onstage <model.glb> --capture out.png [--frames N]");
     }
 
     /// <summary>
@@ -201,7 +201,7 @@ internal static class Program
         var options = WindowOptions.Default with
         {
             Size = new Vector2D<int>(1280, 800),
-            Title = "GlbView capture",
+            Title = "Onstage capture",
             API = new GraphicsAPI(ContextAPI.OpenGL, ContextProfile.Core, ContextFlags.ForwardCompatible, new APIVersion(3, 3)),
             VSync = false,
             IsVisible = false,
@@ -230,7 +230,7 @@ internal static class Program
                 return;
             }
 
-            if (Environment.GetEnvironmentVariable("GLBVIEW_STATUS_TEST") == "1")
+            if (Environment.GetEnvironmentVariable("ONSTAGE_STATUS_TEST") == "1")
             {
                 // Diagnostic: draw the model FIRST, then the overlay — reproducing the
                 // close sequence, where the renderer's cull state is live when the
@@ -315,7 +315,7 @@ internal static class Program
         var options = WindowOptions.Default with
         {
             Size = new Vector2D<int>(1280, 800),
-            Title = $"GlbView — loading {Path.GetFileName(path)}…",
+            Title = $"Onstage — loading {Path.GetFileName(path)}…",
             API = new GraphicsAPI(ContextAPI.OpenGL, ContextProfile.Core, ContextFlags.ForwardCompatible, new APIVersion(3, 3)),
             VSync = true,
         };
@@ -405,7 +405,7 @@ internal static class Program
             }
 
             // Test hook: exercise the full open→load→close lifecycle unattended.
-            if (int.TryParse(Environment.GetEnvironmentVariable("GLBVIEW_AUTO_CLOSE_MS"), out var autoCloseMs)
+            if (int.TryParse(Environment.GetEnvironmentVariable("ONSTAGE_AUTO_CLOSE_MS"), out var autoCloseMs)
                 && clock.ElapsedMilliseconds > autoCloseMs)
             {
                 closeRequested = true;
@@ -470,7 +470,7 @@ internal static class Program
                 {
                     renderer = new Renderer(gl, loaded);
                     camera.FrameBounds(renderer.Bounds.min, renderer.Bounds.max);
-                    window.Title = $"GlbView — {Path.GetFileName(path)}";
+                    window.Title = $"Onstage — {Path.GetFileName(path)}";
                 }
 
                 if (renderer is not null)

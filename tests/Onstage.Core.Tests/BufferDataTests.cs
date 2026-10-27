@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace GlbView.Core.Tests;
+namespace Onstage.Core.Tests;
 
 public class BufferDataTests
 {

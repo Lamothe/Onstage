@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=GlbView
+Name=Onstage
 Comment=View glTF and GLB 3D models
-Exec="@BINDIR@/GlbView.Viewer" %f
-Icon=glbview
+Exec="@BINDIR@/Onstage" %f
+Icon=onstage
 Terminal=false
 Type=Application
 Categories=Graphics;3DGraphics;Viewer;

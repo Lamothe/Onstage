@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace GlbView.Viewer;
+namespace Onstage;
 
 /// <summary>Orbit camera: target-centric yaw/pitch/distance with pan and zoom.</summary>
 internal sealed class OrbitCamera

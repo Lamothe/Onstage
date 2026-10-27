@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace GlbView.Core;
+namespace Onstage.Core;
 
 /// <summary>
 /// Transform helpers for glTF's column-major matrices.

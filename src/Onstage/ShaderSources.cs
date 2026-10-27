@@ -1,4 +1,4 @@
-namespace GlbView.Viewer;
+namespace Onstage;
 
 /// <summary>
 /// GLSL for the viewer. The fragment shader is a full metallic-roughness PBR implementation

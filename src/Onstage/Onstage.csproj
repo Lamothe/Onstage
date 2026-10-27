@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\GlbView.Core\GlbView.Core.csproj" />
+    <ProjectReference Include="..\Onstage.Core\Onstage.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

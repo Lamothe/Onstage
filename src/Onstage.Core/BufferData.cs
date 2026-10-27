@@ -1,6 +1,6 @@
-using GlbView.Core.Schema;
+using Onstage.Core.Schema;
 
-namespace GlbView.Core;
+namespace Onstage.Core;
 
 /// <summary>
 /// The glTF binary data model: buffers resolved to bytes, and accessors decoded from them.

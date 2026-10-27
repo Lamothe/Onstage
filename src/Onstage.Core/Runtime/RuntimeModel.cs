@@ -1,7 +1,7 @@
 using System.Numerics;
-using GlbView.Core.Schema;
+using Onstage.Core.Schema;
 
-namespace GlbView.Core;
+namespace Onstage.Core;
 
 /// <summary>A texture reference as used by one material slot, with its UV transform.</summary>
 public sealed class TextureRef

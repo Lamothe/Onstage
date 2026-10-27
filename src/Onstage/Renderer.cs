@@ -1,10 +1,10 @@
 using System.Numerics;
 using System.Runtime.InteropServices;
-using GlbView.Core;
+using Onstage.Core;
 using Silk.NET.OpenGL;
 using StbImageSharp;
 
-namespace GlbView.Viewer;
+namespace Onstage;
 
 /// <summary>
 /// OpenGL renderer for a GltfModel: uploads geometry and textures, then draws each
@@ -73,7 +73,7 @@ internal sealed unsafe class Renderer : IDisposable
 
     private uint BuildProgram()
     {
-        var mode = Environment.GetEnvironmentVariable("GLBVIEW_SOLID");
+        var mode = Environment.GetEnvironmentVariable("ONSTAGE_SOLID");
         if (mode is "1" or "2")
         {
             // Diagnostic: minimal passthrough — proves whether geometry rasterizes at all.
@@ -491,7 +491,7 @@ internal sealed unsafe class Renderer : IDisposable
 
         // Re-establish pipeline state every frame: the status overlay uses the same
         // context with depth testing off, and state set in the constructor won't survive it.
-        if (Environment.GetEnvironmentVariable("GLBVIEW_WIREFRAME") == "1")
+        if (Environment.GetEnvironmentVariable("ONSTAGE_WIREFRAME") == "1")
         {
             _gl.Disable(EnableCap.CullFace);
             _gl.Disable(EnableCap.DepthTest);

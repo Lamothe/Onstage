@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\GlbView.Core\GlbView.Core.csproj" />
+    <ProjectReference Include="..\..\src\Onstage.Core\Onstage.Core.csproj" />
   </ItemGroup>
 
 </Project>

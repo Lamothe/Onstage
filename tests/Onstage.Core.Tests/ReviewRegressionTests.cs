@@ -1,4 +1,4 @@
-namespace GlbView.Core.Tests;
+namespace Onstage.Core.Tests;
 
 public class ReviewRegressionTests
 {

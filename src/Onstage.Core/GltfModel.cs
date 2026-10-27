@@ -1,9 +1,9 @@
 using System.Numerics;
 using System.Text;
 using System.Text.Json;
-using GlbView.Core.Schema;
+using Onstage.Core.Schema;
 
-namespace GlbView.Core;
+namespace Onstage.Core;
 
 /// <summary>
 /// Loads a GLB (or .gltf + external/data-URI buffers) into a runtime model ready to render.

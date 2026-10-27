@@ -1,4 +1,4 @@
-namespace GlbView.Core;
+namespace Onstage.Core;
 
 /// <summary>
 /// glTF colour-space rules: base colour, emissive, sheen/specular colour and the legacy

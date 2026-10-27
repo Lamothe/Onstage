@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace GlbView.Core.Tests;
+namespace Onstage.Core.Tests;
 
 public class GltfMathTests
 {

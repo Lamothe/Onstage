@@ -1,6 +1,6 @@
-using GlbView.Core.Glb;
+using Onstage.Core.Glb;
 
-namespace GlbView.Core.Tests;
+namespace Onstage.Core.Tests;
 
 public class GlbFileTests
 {

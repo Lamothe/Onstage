@@ -1,7 +1,7 @@
 using Silk.NET.OpenGL;
 using StbTrueTypeSharp;
 
-namespace GlbView.Viewer;
+namespace Onstage;
 
 /// <summary>
 /// Glyph atlas: a system TrueType face rasterised once at startup into a coverage

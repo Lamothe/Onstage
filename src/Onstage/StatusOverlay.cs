@@ -1,7 +1,7 @@
 using System.Numerics;
 using Silk.NET.OpenGL;
 
-namespace GlbView.Viewer;
+namespace Onstage;
 
 /// <summary>
 /// On-screen status text: a rasterised TrueType face drawn as antialiased textured

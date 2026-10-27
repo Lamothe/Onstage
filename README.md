@@ -1,4 +1,4 @@
-# GlbView
+# Onstage
 
 A GLB/glTF 2.x viewer in C# — written to understand the format end to end rather than
 wrap someone else's loader. Exhibit (the GNOME viewer) is a Python/GTK settings shell over
@@ -8,24 +8,24 @@ Python can intervene. Here the whole pipeline is in reach.
 ## Layout
 
 ```
-src/GlbView.Core/     parsing and scene assembly (no rendering dependencies)
+src/Onstage.Core/     parsing and scene assembly (no rendering dependencies)
   Glb/GlbFile.cs      GLB container: header, JSON chunk, BIN chunk
   Schema/             typed DTOs for the glTF manifest
   BufferData.cs       buffer -> bufferView -> accessor decode (strides, sparse, normalised)
   GltfModel.cs        loads a file into runtime meshes/nodes/materials/textures/lights/skins
-src/GlbView.Viewer/   Silk.NET OpenGL 3.3 renderer
+src/Onstage/   Silk.NET OpenGL 3.3 renderer
   ShaderSources.cs    metallic-roughness PBR + extension shading
   Renderer.cs         geometry upload, CPU skinning, per-material uniforms
   OrbitCamera.cs      orbit/pan/zoom with auto-framing
-tests/GlbView.Core.Tests/  xUnit tests over hand-built in-memory GLBs
+tests/Onstage.Core.Tests/  xUnit tests over hand-built in-memory GLBs
 ```
 
 ## Usage
 
 ```
-dotnet run --project src/GlbView.Viewer -- <model.glb>              # interactive viewer
-dotnet run --project src/GlbView.Viewer -- --inspect <model.glb>    # dump structure, no window
-dotnet run --project src/GlbView.Viewer -- <model.glb> --capture out.png   # offscreen render
+dotnet run --project src/Onstage -- <model.glb>              # interactive viewer
+dotnet run --project src/Onstage -- --inspect <model.glb>    # dump structure, no window
+dotnet run --project src/Onstage -- <model.glb> --capture out.png   # offscreen render
 ```
 
 Mouse: left-drag orbit, right/middle-drag pan, scroll zoom, F11 toggles fullscreen,
@@ -35,17 +35,17 @@ Esc quits. The interactive viewer opens immediately and shows progress ("Parsing
 parsing and texture decoding run on a background thread, and textures upload
 incrementally per frame. Exit codes: 0 on clean close, 2 if the model failed to load.
 
-Diagnostic env vars: `GLBVIEW_WIREFRAME=1` (no culling/depth), `GLBVIEW_SOLID=1|2`
-(solid-colour shaders; mode 2 ignores vertex attributes entirely), `GLBVIEW_AUTO_CLOSE_MS=N`
+Diagnostic env vars: `ONSTAGE_WIREFRAME=1` (no culling/depth), `ONSTAGE_SOLID=1|2`
+(solid-colour shaders; mode 2 ignores vertex attributes entirely), `ONSTAGE_AUTO_CLOSE_MS=N`
 (self-close after N ms — exercises the full open/close lifecycle unattended),
-`GLBVIEW_STATUS_TEST=1` (with `--capture`: draws the status overlay after the model to
+`ONSTAGE_STATUS_TEST=1` (with `--capture`: draws the status overlay after the model to
 verify overlay text survives the renderer's GL state).
 
 ## Desktop integration (GNOME)
 
-`linux/install.sh` publishes the viewer to `~/.local/share/glbview`, installs a
-`.desktop` entry and icon, and makes GlbView the default handler for `.glb`/`.gltf`
-(double-click in Files). Launching GlbView with no arguments opens a file picker.
+`linux/install.sh` publishes the viewer to `~/.local/share/onstage`, installs a
+`.desktop` entry and icon, and makes Onstage the default handler for `.glb`/`.gltf`
+(double-click in Files). Launching Onstage with no arguments opens a file picker.
 Re-run the script after pulling changes; it is idempotent.
 
 ## Extension support

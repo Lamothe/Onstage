@@ -1,4 +1,4 @@
-namespace GlbView.Viewer;
+namespace Onstage;
 
 /// <summary>
 /// Hand-drawn 5x7 glyphs for the status overlay. Row-major art, '#' = pixel.

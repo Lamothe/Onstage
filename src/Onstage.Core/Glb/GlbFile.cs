@@ -1,7 +1,7 @@
 using System.Buffers.Binary;
 using System.Text.Json;
 
-namespace GlbView.Core.Glb;
+namespace Onstage.Core.Glb;
 
 /// <summary>
 /// Parsed GLB container: 12-byte header plus chunks. The first chunk is the JSON manifest;

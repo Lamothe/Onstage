@@ -2,7 +2,7 @@ using System.Buffers.Binary;
 using System.Text;
 using System.Text.Json;
 
-namespace GlbView.Core.Tests;
+namespace Onstage.Core.Tests;
 
 /// <summary>Builds small GLB files in memory for parser tests.</summary>
 internal static class GlbBuilder
